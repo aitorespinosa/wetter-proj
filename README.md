@@ -1,27 +1,31 @@
-# WetterProj
+# The Weather Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.3.
+This project was made on Angular 8, for an assignment of an Multi-Distribution Front End Application.
 
-## Development server
+Some parts of the assigment has been developed with Angular CLI, ElectronJS and Material Design.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## API Requirements
 
-## Code scaffolding
+This application uses some third party APIs:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* [OpenWeather](https://openweathermap.org/api)
+* [Unsplash](https://unsplash.com/documentation)
+* [GeoDB](https://rapidapi.com/)
 
-## Build
+Please fill in the API.ts file (/src/app/) with the necessary keys and endpoints.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Requirements
 
-## Running unit tests
+- [ ] Web version. The app can be accessed via most used web browsers with no loss of features: Firefox, Chrome, Safari, Edge.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [ ] Desktop version. The app is distributed with a desktop version. That means it has to be able to be downloaded and installed to desktop main OSs (Windows and Linux).
 
-## Running end-to-end tests
+- [ ] The app has to be able to remain functional even when there is not connection to Internet. Yes, we mean offline features. Besides, the app has to be able to detect the cnnection is available again and synchronize data with the Back End.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- [ ] Usability and User Experience are key aspects. The app has to be easy and intuitive for not-trained users.
 
-## Further help
+- [ ] How to display large amounts of data. The app will show somewhere a long list of records. The list has to be responsive, low-latency and really easy to use.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- [ ] Mobile app. The app should be ready to be published to main mobile app stores (Google Play and Apple Store). The model can ca hybrid or native.
+
+- [ ] SDLC for a multi-target distribution can be complex. Please include in your assignment your preferred approach for this area as well as a basic implementation at least.
