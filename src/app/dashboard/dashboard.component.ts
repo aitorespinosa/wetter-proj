@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
   private citySubscription: Subscription = null;
   public city: City = null;
 
-  public visible: boolean = true;
+  public visible: boolean = false;
   public splash: boolean = true;
 
   public searchCitiesCtrl = new FormControl();
@@ -35,9 +35,10 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.citySubscription = this.artService.art$.subscribe({
+      this.citySubscription = this.cityService.city$.subscribe({
         next: (value: Art) => {
           if (value){
+            this.city = value;
             this.closeSplash();
           }else{
             this.openSplash();
