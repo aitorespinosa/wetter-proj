@@ -1,1 +1,13 @@
-<p>dashboard works!</p>
+<div class="dashboard-wrapper" [class.sb-open]="visible" [class.sb-close]="!visible" [class.splass]="splash">
+    <p>Splash: {{splash}}</p>
+    <p>Visible: {{visible}}</p>
+    <div class="toggleSidebar nav-icon" [class.open]="visible" (click)="toggleSidebar()" *ngIf="!splash">
+        <div></div>
+    </div>
+
+  
+    <div *ngIf="!splash" class="deleteWrapper">
+        <button (click)="clearConfig()" >Delete configuration</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,42 @@
+.weather-wrapper
+  text-align: center
+  padding: 20px
+  
+  .wind
+    display: grid
+    grid-template-columns: 1fr 1fr
+    font-size: 20px
+    font-weight: 300
+    
+    div
+      text-align: center
+
+    *
+      vertical-align: middle
+      display: inline-block
+
+    img
+      max-height: 20px
+      max-width: 32px
+
+      path
+        fill: white
+        // background-color: white
+
+  .sky-icon
+    margin-top: 10px
+    img
+      max-height: 300px
+  
+  @media(max-width: 400px)
+    background: rgba(0,0,0,0.3)
+    height: 100vh
+    padding-top: 4em
+    
+    .wind
+      font-size: 18px
+
+    .sky-icon
+      img
+        max-height: 250px
+        padding-top: 40px

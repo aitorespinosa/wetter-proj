@@ -1,1 +1,4 @@
-<p>artboard works!</p>
+<div class="artboard-wrapper " [class.offline]="!online">
+    <img src="{{ collection[0].urls.regular }}" *ngIf="collection[0]" [class.active]="tiktak" />
+    <img src="{{ collection[1].urls.regular }}" *ngIf="collection[1]" [class.active]="tiktak" />
+</div>

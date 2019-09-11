@@ -1,0 +1,22 @@
+.artboard-wrapper
+  transition: filter 0.5s
+
+  &.offline
+    filter: gray
+    -webkit-filter: grayscale(85%)
+
+  img
+    width: 100vw
+    height: 100vh
+    object-fit: cover
+    filter: brightness(85%)
+    -webkit-transition: opacity 1s ease-in-out
+    -moz-transition: opacity 1s ease-in-out
+    -o-transition: opacity 1s ease-in-out
+    transition: opacity 1s ease-in-out
+
+    &.active
+      opacity:0
+  
+  
+  

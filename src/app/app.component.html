@@ -1,5 +1,5 @@
-
-<app-dashboard></app-dashboard>
-<app-weather></app-weather>
-<app-artboard></app-artboard>
-
+<div class="app-wrapper">
+    <app-artboard  ></app-artboard>
+    <app-weather></app-weather>
+    <app-dashboard [class.splash]="splash" (splash)="customFunc(splash)"></app-dashboard>
+  </div>

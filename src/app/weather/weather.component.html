@@ -1,1 +1,23 @@
-<p>weather works!</p>
+<div class="weather-wrapper" *ngIf="visible">
+    <h1>{{ weather.name }}</h1>
+    
+    <div class="wind">
+    
+      <div class="speed">
+        <img class="icon-filled" src="assets/icons/wind.svg" alt="Wind: " title="" />
+        <span>{{ weather.wind.speed *3.6 | number : '2.0-0' }} km/h</span>
+      </div>
+    
+      <div class="dir" *ngIf="weather.windDir">
+        <img class="icon-filled" src="assets/icons/location-arrow.svg" alt="Compass: " title="" />
+        <span> {{ weather.windDir }} | {{ weather.wind.deg }}º</span>
+      </div>
+    
+    </div>
+    
+    <div class="sky-icon">
+        <img class="icon-filled" src="assets/weather/{{ weather.weather[0].icon }}.png" alt="Compass: " title="{{ weather.weather[0].description  }}" />
+    </div>
+    
+    <h2>{{ weather.main.temp_min - 273.15 | number : '2.0-0' }}º / {{ weather.main.temp_max - 273.15 | number : '2.0-0' }}º</h2>
+</div>
