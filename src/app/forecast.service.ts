@@ -91,11 +91,6 @@ export class ForecastService {
       localStorage.setItem( this.localStorageTagForecast, JSON.stringify(forecast) );
   }
 
-  private removeWeatherOnLS(){
-    localStorage.removeItem(this.localStorageTag);
-    localStorage.removeItem(this.localStorageTagForecast);
-  }
-
   /**
    * Intervals
    */

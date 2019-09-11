@@ -1,5 +1,5 @@
 <div class="app-wrapper">
     <app-artboard  ></app-artboard>
-    <app-weather></app-weather>
+    <app-weather [city]="currentCity.name" *ngIf="currentCity"></app-weather>
     <app-dashboard [class.splash]="splash"></app-dashboard>
   </div>

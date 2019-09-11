@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 export class AppComponent {
   
   splash: boolean = true;
+  currentCity: City;
   private citySubscription: Subscription = null;
 
   constructor(private cityService: CityService){
@@ -21,6 +22,7 @@ export class AppComponent {
             this.splash = true;
           }else{
             this.splash = false;
+            this.currentCity = value;
           }
         }
       });

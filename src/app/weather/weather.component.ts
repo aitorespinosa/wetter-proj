@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Forecast } from '../forecast';
-import * as MOCK_FORECAST from '../Mock-forecast';
 import { Subscription } from 'rxjs';
 import { ForecastService } from '../forecast.service';
-import { City } from '../city';
 
 @Component({
   selector: 'app-weather',
@@ -15,7 +13,8 @@ export class WeatherComponent implements OnInit {
   public visible: boolean = false;
   public weather: Forecast = null;
   private weatherSubscription: Subscription = null;
-  
+  @Input() city: string;
+
   constructor(private forecastService: ForecastService) { }
 
   ngOnInit() {

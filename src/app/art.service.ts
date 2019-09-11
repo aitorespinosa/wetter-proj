@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Art } from './art';
 import { CityService } from './city.service';
-import * as MOCK_ART from './Mock-art';
 import { ForecastService } from './forecast.service';
 import { Forecast } from './forecast';
 import { City } from './city';
 import * as APIS from './apis';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { mock_response } from './Mock-art';
 
 @Injectable({
   providedIn: 'root'
@@ -85,6 +85,7 @@ private getArtsfromAPI(newCity : boolean = false) {
       (error) => {
         if (this.getArtsFromLS().length < 1){
           this.stopInverval();
+          this.setArtsOnLS(mock_response)
         }
       }
     );

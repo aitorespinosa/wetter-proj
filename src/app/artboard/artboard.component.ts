@@ -32,9 +32,8 @@ import { trigger, transition, style, animate, stagger, query } from '@angular/an
 
 export class ArtboardComponent implements OnInit {
 
-  private arts : Art[] = MOCK_ART.mock_response;
 
-  public collection: [Art, Art] = [this.arts[0], this.arts[1]];
+  public collection: Art[] = [];
   public online: boolean = true;
   public tiktak: boolean = true;
   private artSubscription: Subscription = null;
@@ -46,8 +45,13 @@ export class ArtboardComponent implements OnInit {
       this.artSubscription = this.artService.art$.subscribe({
         next: (value) => {
           if (value){
-            this.collection.push(value);
-            this.collection.shift();
+
+            if (this.collection.length > 0){
+              this.collection.push(value);
+              this.collection.shift();
+            }else{
+              this.collection = [value];
+            }
         }
       }
       });
