@@ -19,7 +19,7 @@ export class ArtService {
   private artSource : BehaviorSubject<Art> = new BehaviorSubject<Art>(null);
   public art$ = this.artSource.asObservable();
 
-  public interval : number = 120000;
+  public interval : number = 90000;
   private intervalHandler: any = null;
   private localStorageTag: string = 'CurrentArts';
   private cityHandle: City = null;
