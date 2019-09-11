@@ -19,24 +19,24 @@ describe('ArtboardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should create', () => {
+  //   expect(component).toBeTruthy();
+  // });
 
-  it('should add new art on artboards array', () => {
+  // it('should add new art on artboards array', () => {
 
-  });
+  // });
 
-  it('should toggle artboards order', () => {
+  // it('should toggle artboards order', () => {
 
-  });
+  // });
 
-  it('should transform artboard in b&w', () => {
+  // it('should transform artboard in b&w', () => {
     
-  });
+  // });
 
-  it('should be visible', () => {
+  // it('should be visible', () => {
 
-  });
+  // });
 
 });
