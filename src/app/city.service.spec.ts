@@ -1,9 +1,7 @@
 import { TestBed } from '@angular/core/testing';
-
 import { CityService } from './city.service';
 import { City } from './city';
 import * as MOCK_CITY from './Mock-city';
-import { Subscriber } from 'rxjs';
 
 const FAKE_CITY = MOCK_CITY.mock_response;
 // const service: CityService = null;

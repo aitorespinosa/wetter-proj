@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { City } from './city';
-import {mock_response} from './Mock-city';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +9,13 @@ export class CityService {
 
   private citySource : BehaviorSubject<City> = new BehaviorSubject<City>(null);
   public city$ = this.citySource.asObservable();
-  private currentCity: string = 'CurrentCity';
+  private localStorageTag: string = 'CurrentCity';
 
   constructor() { }
 
   public getCityFromLS(){
-    let currentCity = JSON.parse(localStorage.getItem('CurrentCity'));
+    let currentCity = JSON.parse(localStorage.getItem(this.localStorageTag));
+    
     if (currentCity){
       this.citySource.next(currentCity);
       return true;
@@ -27,11 +27,11 @@ export class CityService {
   
   private setCityOnLS(city: City){
     if(city)
-      localStorage.setItem( this.currentCity, JSON.stringify(city) );
+      localStorage.setItem( this.localStorageTag, JSON.stringify(city) );
   }
 
   private removeCityOnLS(){
-    localStorage.removeItem(this.currentCity);
+    localStorage.removeItem(this.localStorageTag);
   }
 
 
