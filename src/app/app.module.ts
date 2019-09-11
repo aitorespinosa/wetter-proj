@@ -12,6 +12,8 @@ import { MaterialModule } from './material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { CityService } from './city.service';
+import { ForecastService } from './forecast.service';
 
 
 @NgModule({
@@ -30,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CityService, ForecastService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

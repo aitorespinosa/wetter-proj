@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Forecast } from '../forecast';
 import * as MOCK_FORECAST from '../Mock-forecast';
 import { Subscription } from 'rxjs';
-import { CityService } from '../city.service';
+import { ForecastService } from '../forecast.service';
 import { City } from '../city';
 
 @Component({
@@ -14,20 +14,20 @@ export class WeatherComponent implements OnInit {
 
   public visible: boolean = false;
   public weather: Forecast = null;
-  private citySubscription: Subscription = null;
+  private weatherSubscription: Subscription = null;
   
-  constructor(private cityService: CityService) { }
+  constructor(private forecastService: ForecastService) { }
 
   ngOnInit() {
 
     setTimeout(() => {
-      this.citySubscription = this.cityService.city$.subscribe({
-        next: (value: City) => {
+      this.weatherSubscription = this.forecastService.weather$.subscribe({
+        next: (value: Forecast) => {
           if (value === null){
             this.weather = null
             this.hideWeather();
           }else{
-            this.weather = MOCK_FORECAST.mock_weather_response;
+            this.weather = value;
             this.showWeather()
           }
         }
