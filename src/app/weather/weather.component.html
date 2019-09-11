@@ -19,5 +19,11 @@
         <img class="icon-filled" src="assets/weather/{{ weather.weather[0].icon }}.png" alt="Compass: " title="{{ weather.weather[0].description  }}" />
     </div>
     
-    <h2>{{ weather.main.temp_min - 273.15 | number : '2.0-0' }}º / {{ weather.main.temp_max - 273.15 | number : '2.0-0' }}º</h2>
+    <h2>
+      <div>{{ weather.main.temp - 273.15 | number : '2.0-0' }}º</div>
+      <div>
+        <span>Min: {{ weather.main.temp_min - 273.15 | number : '2.0-0' }}º </span>
+        <span>Max: {{ weather.main.temp_max - 273.15 | number : '2.0-0' }}º </span>
+      </div>
+    </h2>
 </div>
