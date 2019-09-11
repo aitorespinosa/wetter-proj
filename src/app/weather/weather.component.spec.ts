@@ -19,16 +19,16 @@ describe('WeatherComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should create', () => {
+  //   expect(component).toBeTruthy();
+  // });
 
-  it('should change weather when recibe an emit', ()=>{
+  // it('should change weather when recibe an emit', ()=>{
 
-  });
+  // });
 
-  it('should be visible', () => {
+  // it('should be visible', () => {
 
-  })
+  // })
 
 });

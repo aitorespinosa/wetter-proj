@@ -35,8 +35,6 @@ export class ArtService {
         if(value){
           this.weatherHandle = value;
           this.cityHandle = this.cityService.getCurrentCity();
-          console.log(value);
-          console.log(this.cityHandle);
           this.startInterval(true);
           this.getArtsfromAPI(true);
         }
@@ -93,7 +91,6 @@ private getArtsfromAPI(newCity : boolean = false) {
 }
 
 private getTags(city: City, weather: Forecast){
-  console.log(city);
     return [
       'landscape',
       city.country,

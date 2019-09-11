@@ -24,6 +24,10 @@ export class CityService {
       return false
     }
   }
+
+  public getCurrentCity(){
+    return JSON.parse(localStorage.getItem(this.localStorageTag));
+  }
   
   private setCityOnLS(city: City){
     if(city)

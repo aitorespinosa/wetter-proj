@@ -32,7 +32,6 @@ export class ForecastService {
 
       this.cityService.city$.subscribe({
         next: (value: City) => { 
-          console.log(value);
           if(value){
             this.cityHandle = value;
             this.startInterval()
@@ -66,16 +65,16 @@ export class ForecastService {
 
   private getForecastFromLS(){
     let currentForecast : Forecast[] = JSON.parse(localStorage.getItem(this.localStorageTagForecast));
-    
     if (currentForecast){
       let currentDate = new Date();
-      let future = currentForecast.filter( ele  => ele.dt > currentDate.getTime());
-      
+      let future = currentForecast.filter( ele  =>  ele.dt*1000 > currentDate.getTime()
+      );
         if (future.length){
+          future[0].name = this.cityHandle.name;
           this.weatherSource.next(future[0]);
         }else{
-          this.weatherSource.next(null);
           this.stopInverval();
+          this.weatherSource.next(null);
         }
     }else{
       this.weatherSource.next(null);
@@ -103,7 +102,6 @@ export class ForecastService {
 
   public routine(){
     this.getWeather(this.cityHandle);
-    console.log(this.cityHandle)
   }
 
   private startInterval(){

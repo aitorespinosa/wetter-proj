@@ -6,6 +6,8 @@ import { FormControl } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { debounceTime, tap, switchMap, finalize } from 'rxjs/operators';
 import * as APIS from '../apis';
+import { ArtService } from '../art.service';
+import { Art } from '../art';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +16,7 @@ import * as APIS from '../apis';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private cityService: CityService, private http: HttpClient) { }
+  constructor(private cityService: CityService, private artService: ArtService, private http: HttpClient) { }
 
   private citySubscription: Subscription = null;
   public city: City = null;
@@ -33,10 +35,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.citySubscription = this.cityService.city$.subscribe({
-        next: (value: City) => {
+      this.citySubscription = this.artService.art$.subscribe({
+        next: (value: Art) => {
           if (value){
-            this.city = value;
             this.closeSplash();
           }else{
             this.openSplash();
