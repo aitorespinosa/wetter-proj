@@ -1,10 +1,24 @@
 <div class="dashboard-wrapper" [class.sb-open]="visible" [class.sb-close]="!visible" [class.splass]="splash">
-    <p>Splash: {{splash}}</p>
-    <p>Visible: {{visible}}</p>
     <div class="toggleSidebar nav-icon" [class.open]="visible" (click)="toggleSidebar()" *ngIf="!splash">
         <div></div>
     </div>
 
+    <div class="cities-wrapper" [class.splash]="splash">
+        <h2 *ngIf="!splash">Cities</h2>
+        <h2 *ngIf="splash">Welcome</h2>
+      
+        <mat-form-field>
+          <input matInput placeholder="Enter new city" aria-label="State" [matAutocomplete]="auto" [formControl]="searchCitiesCtrl">
+          <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option *ngIf="isLoading" class="is-loading">Loading...</mat-option>
+            <ng-container *ngIf="!isLoading">
+              <mat-option *ngFor="let city of filteredCities" [value]="city">
+                <span><b>{{city.city}}</b> ({{city.country}})</span>
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </mat-form-field>
+    </div>
   
     <div *ngIf="!splash" class="deleteWrapper">
         <button (click)="clearConfig()" >Delete configuration</button>

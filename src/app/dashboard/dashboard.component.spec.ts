@@ -27,55 +27,55 @@ describe('DashboardComponent', () => {
     
   });
 
-  it('should create', () => {
+  // it('should create', () => {
 
-    const spy = TestBed.get(CityService);
-    spy.city$ = of(FAKE_CITY);
+  //   const spy = TestBed.get(CityService);
+  //   spy.city$ = of(FAKE_CITY);
     
-    spyOn(cityServiceMock, 'getCityFromLS').and.returnValue();
+  //   spyOn(cityServiceMock, 'getCityFromLS').and.returnValue();
 
-    expect(component).toBeTruthy();
-  });
+  //   expect(component).toBeTruthy();
+  // });
 
-  it('should retrieve current city', () => {
-    const spy = TestBed.get(CityService);
-    spy.city$ = of(FAKE_CITY);
+  // it('should retrieve current city', () => {
+  //   const spy = TestBed.get(CityService);
+  //   spy.city$ = of(FAKE_CITY);
     
-    spyOn(cityServiceMock, 'getCityFromLS').and.callFake( () => {
-      component.city = FAKE_CITY;
-    });
+  //   spyOn(cityServiceMock, 'getCityFromLS').and.callFake( () => {
+  //     component.city = FAKE_CITY;
+  //   });
 
 
-    let test = component.getCurrentCity();
-    fixture.detectChanges();
-    expect(component.city).toEqual(FAKE_CITY);
+  //   let test = component.getCurrentCity();
+  //   fixture.detectChanges();
+  //   expect(component.city).toEqual(FAKE_CITY);
 
-  });
+  // });
 
-  it('should change city on input selected', () => {
+  // it('should change city on input selected', () => {
     
-  });
+  // });
 
 
-  it('should call City Service and emit null', () => {
+  // it('should call City Service and emit null', () => {
 
-  });
+  // });
 
-  it('Should call Art Service with new Slider Value', () => {
+  // it('Should call Art Service with new Slider Value', () => {
 
-  });
+  // });
 
-  it('should toggle splash screen on null city', () => {
+  // it('should toggle splash screen on null city', () => {
 
-  });
+  // });
 
-  it('should toggle sidebar on toggle button', () => {
+  // it('should toggle sidebar on toggle button', () => {
 
-  });
+  // });
 
-  it('should close toggle sidebar', () => {
-      let test = component.toggleSidebar();
-      expect(component.visible).toBeFalsy;
-  });
+  // it('should close toggle sidebar', () => {
+  //     let test = component.toggleSidebar();
+  //     expect(component.visible).toBeFalsy;
+  // });
 
 });

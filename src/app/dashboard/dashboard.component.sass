@@ -1,7 +1,89 @@
-input, .mat-form-field-appearance-legacy .mat-form-field-label 
-    color: white
+.dashboard-wrapper
+  background: #282c44
+  height: 100vh
+  padding:  40px 20px
+  
+  transition: left 0.5s
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: 50px 1fr 1fr 50px
 
 
-.splash
+
+  .cities-wrapper
+    grid-row: 2 / span 1
+
+    input, .mat-form-field-appearance-legacy .mat-form-field-label 
+      scolor: white
+
+  h2
+    font-size: 2em
+
+  &.sb-open
+    position: relative
+    left: 0
+  
+  &.sb-close
+    position: relative
+    left: -100%
+
+  .nav-icon 
+    margin: 1em
+    width: 40px
+    position: absolute
+    right: -80px
+    top: 0
+
+    &:after, &:before, div 
+      background-color: #fff
+      border-radius: 3px
+      content: ''
+      display: block
+      height: 5px
+      margin: 7px 0
+      transition: all .2s ease-in-out
+  
+    &.open
+      right: 0
+      z-index: 120
+      
+      &:before 
+        transform: translateY(12px) rotate(135deg)
+
+      &:after 
+        transform: translateY(-12px) rotate(-135deg)
+      
+      div 
+        transform: scale(0)
+
+
+  .splash
+    text-align: center
+    padding-top: 30vh
+    display: block
+
     h2
-        font-size: 4em
+      font-size: 4em
+    
+    input
+      font-size: 1.3em
+      width: 80%
+      max-width: 400px
+
+  .deleteWrapper
+    grid-row: 3 / span 1
+    align-self: end
+    text-align: center
+    padding-bottom: 50px
+
+    button
+      font-size: 1em
+      background: no-repeat
+      padding: 15px 30px
+      color: white
+      border-radius: 5px
+      border-width: 2px
+      transition: background .3s
+      &:hover
+        background: rgba(0,0,0,0.4)
+  
