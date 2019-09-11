@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~normalize.css'
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap')
+
+body
+  font-family: 'Poppins', sans-serif
+  letter-spacing: 0.05em
+  color: white
+
+h1 
+  font-size: 48px
+  font-weight: 600
+  padding: 0
+  margin: 0
+
+h2 
+  font-size: 48px
+  font-weight: 300
+  padding: 0
+  margin: 0
+
+@media(max-width: 400px)
+  h1
+    font-size: 40px
+  h2
+    font-size: 30px
