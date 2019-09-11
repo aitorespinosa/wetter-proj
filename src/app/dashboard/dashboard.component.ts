@@ -36,8 +36,6 @@ export class DashboardComponent implements OnInit {
       this.citySubscription = this.cityService.city$.subscribe({
         next: (value: City) => {
           if (value){
-            console.log("Nueva city en Dashboard Comp");
-            console.log(value);
             this.city = value;
             this.closeSplash();
           }else{
